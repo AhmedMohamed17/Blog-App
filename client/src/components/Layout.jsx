@@ -8,6 +8,7 @@ const Layout = () => {
     <React.Fragment>
       <Header />
       <Outlet />
+
       <Footer />
     </React.Fragment>
   );
