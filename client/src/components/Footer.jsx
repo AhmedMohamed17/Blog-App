@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-      <ul className="footer_categories">
+      <ul className="footer__categories">
         <li>
           <Link to="/posts/categories/Agriculture">Agriculture</Link>
         </li>
