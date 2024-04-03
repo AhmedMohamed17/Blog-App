@@ -114,6 +114,17 @@ color:var(--color-white)
   background: var(--color-gray-900);
   color: var(--color-white);
 }
+.center{
+  text-align: center;
+  padding-top: 5rem;
+  margin-inline: auto;
+  display: block;
+  width: 100%;
+
+}
+.error-page h2{
+  margin-top:3rem;
+}
 
 
 
@@ -187,4 +198,21 @@ footer {
   padding: 1rem;
   color: var(--color-white);
   font-weight: 300;
+}
+
+/* -------------------- Home ------------------*/
+/* -------------------- posts ------------------*/
+.posts__container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:4rem;
+}
+
+.post{
+background: var(--color-white);
+padding: 1rem;
+border-radius: var(--radius-4);
+padding-bottom:2rem ;
+transition: var(--transition);
+
 }
