@@ -1,61 +1,29 @@
 import React, { useState } from "react";
-import Thumbnail1 from "../images/blog1.jpg";
-import Thumbnail2 from "../images/blog2.jpg";
-import Thumbnail3 from "../images/blog3.jpg";
-import Thumbnail4 from "../images/blog4.jpg";
-import PostItem from "./PostItem";
 
-const BUMMY_POSTS = [
-  {
-    id: 1,
-    thumbnail: Thumbnail1,
-    category: "education",
-    title: "This is title of the very first post on this blog",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorID: 3,
-  },
-  {
-    id: 2,
-    thumbnail: Thumbnail2,
-    category: "science",
-    title: "This is title of the very first post on this blog",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorID: 1,
-  },
-  {
-    id: 3,
-    thumbnail: Thumbnail3,
-    category: "weather",
-    title: "This is title of the very first post on this blog",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorID: 13,
-  },
-  {
-    id: 4,
-    thumbnail: Thumbnail4,
-    category: "farming",
-    title: "This is title of the very first post on this blog",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    authorID: 11,
-  },
-];
+import PostItem from "./PostItem";
+import { DUMMY_POSTS } from "../data";
+
 const Posts = () => {
-  const [posts, setPosts] = useState(BUMMY_POSTS);
+  const [posts, setPosts] = useState(DUMMY_POSTS);
   return (
-    <section>
-      <div className="container posts__container">
-        {posts.map(({ id, thumbnail, category, title, desc, authorID }) => (
-          <PostItem
-            key={id}
-            thumbnail={thumbnail}
-            category={category}
-            title={title}
-            description={desc}
-            authorID={authorID}
-            postID={id}
-          />
-        ))}
-      </div>
+    <section className="posts">
+      {posts.length > 0 ? (
+        <div className="container posts__container">
+          {posts.map(({ id, thumbnail, category, title, desc, authorID }) => (
+            <PostItem
+              key={id}
+              thumbnail={thumbnail}
+              category={category}
+              title={title}
+              description={desc}
+              authorID={authorID}
+              postID={id}
+            />
+          ))}
+        </div>
+      ) : (
+        <h2 className="center">No Posts Found</h2>
+      )}
     </section>
   );
 };
