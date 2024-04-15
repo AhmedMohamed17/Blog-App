@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [userData, setUserData] = useState({
@@ -26,7 +27,34 @@ const Register = () => {
             value={userData.name}
             onChange={changeInputHandler}
           />
+          <input
+            type="text"
+            placeholder="email"
+            name="email"
+            value={userData.email}
+            onChange={changeInputHandler}
+          />
+          <input
+            type="password"
+            placeholder="password"
+            name="password"
+            value={userData.password}
+            onChange={changeInputHandler}
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            name="password2"
+            value={userData.password2}
+            onChange={changeInputHandler}
+          />
+          <button type="submit" className="btn primary">
+            Register
+          </button>
         </form>
+        <small>
+          Already have an account? <Link to="/login">Sign in</Link>
+        </small>
       </div>
     </section>
   );
